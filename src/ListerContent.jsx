@@ -1,4 +1,3 @@
-import { OmitProps } from 'antd/lib/transfer/ListBody';
 import { useState } from 'react';
 import { ListerButton } from './ListerButton';
 import { SpeciesList } from './SpeciesList';
