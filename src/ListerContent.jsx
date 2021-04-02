@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { Empty, Spin, Skeleton } from 'antd';
 import { ListerButton } from './ListerButton';
 import { SpeciesList } from './SpeciesList';
-import { recursiveObservationFetcher } from './utilities/observationFetcher';
+import { recursiveObservationFetcher } from './utilities/fetchObservations';
 
 export function ListerContent() {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const createSpeciesList = (dataPages) => {
     let speciesSet = new Set();
@@ -23,9 +25,14 @@ export function ListerContent() {
   }
 
   const handleListButtonClick = (e) => {
+    setLoading(true);
+    if (data) {
+      setData([]);
+    }
     recursiveObservationFetcher('Mammalia', 1, []).then(data => {
       let speciesList = createSpeciesList(data);
       setData(speciesList);
+      setLoading(false);
     })
   }
 
@@ -43,7 +50,11 @@ export function ListerContent() {
         handleListButtonClick={handleListButtonClick}
         handleClearListButtonClick={handleClearListButtonClick}
       />
-      {data.length ? <SpeciesList speciesList={data} /> : ''}
+      {!data.length ?
+        loading ?
+          <Skeleton active paragraph={{ rows: 10 }} /> :
+            <Empty /> :
+              <SpeciesList speciesList={data} />}
     </div>
   )
 }
