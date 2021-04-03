@@ -6,14 +6,14 @@ export function ListerButton(props) {
       <Button
         type={"primary"}
         size={"large"}
-        onClick={props.handleListButtonClick}
+        onClick={props.handleListerButtonClick}
       >
-        Create Species List
+        List Species
       </Button>
       <Button
         type={"secondary"}
         size={"large"}
-        onClick={props.handleClearListButtonClick}
+        onClick={props.handleClearListerButtonClick}
       >
         Clear List
       </Button>

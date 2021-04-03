@@ -1,10 +1,12 @@
 import { useState } from 'react';
-import { Empty, Spin, Skeleton } from 'antd';
+import { Empty, Spin } from 'antd';
+import { IconicTaxaSelector } from './IconicTaxaSelector';
 import { ListerButton } from './ListerButton';
 import { SpeciesList } from './SpeciesList';
 import { recursiveObservationFetcher } from './utilities/fetchObservations';
 
 export function ListerContent() {
+  const [iconicTaxa, setIconicTaxa] = useState('');
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -24,19 +26,23 @@ export function ListerContent() {
     return speciesList;
   }
 
-  const handleListButtonClick = (e) => {
+  const handleIconicTaxaChange = (value) => {
+    setIconicTaxa(value);
+  }
+  
+  const handleListerButtonClick = (e) => {
     setLoading(true);
     if (data) {
       setData([]);
     }
-    recursiveObservationFetcher('Mammalia', 1, []).then(data => {
+    recursiveObservationFetcher(iconicTaxa, 1, []).then(data => {
       let speciesList = createSpeciesList(data);
       setData(speciesList);
       setLoading(false);
     })
   }
 
-  const handleClearListButtonClick = (e) => {
+  const handleClearListerButtonClick = (e) => {
     setData([]);
   }
 
@@ -46,15 +52,20 @@ export function ListerContent() {
 
   return (
     <div className='lister-content'>
+      <IconicTaxaSelector handleIconicTaxaChange={handleIconicTaxaChange} />
       <ListerButton
-        handleListButtonClick={handleListButtonClick}
-        handleClearListButtonClick={handleClearListButtonClick}
+        handleListerButtonClick={handleListerButtonClick}
+        handleClearListerButtonClick={handleClearListerButtonClick}
       />
       {!data.length ?
         loading ?
-          <Skeleton active paragraph={{ rows: 10 }} /> :
+          <Spin className='spinner' size='large' /> :
             <Empty /> :
-              <SpeciesList speciesList={data} />}
+              <SpeciesList
+                speciesList={data}
+                iconicTaxa={iconicTaxa}
+              />
+      }
     </div>
   )
 }
