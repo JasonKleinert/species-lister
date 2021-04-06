@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/species-lister/static/css/main.9d36d1b7.chunk.css",
-    "main.js": "/species-lister/static/js/main.ae3b7b05.chunk.js",
-    "main.js.map": "/species-lister/static/js/main.ae3b7b05.chunk.js.map",
+    "main.css": "/species-lister/static/css/main.16b7b250.chunk.css",
+    "main.js": "/species-lister/static/js/main.ec9a43b7.chunk.js",
+    "main.js.map": "/species-lister/static/js/main.ec9a43b7.chunk.js.map",
     "runtime-main.js": "/species-lister/static/js/runtime-main.066d2bd7.js",
     "runtime-main.js.map": "/species-lister/static/js/runtime-main.066d2bd7.js.map",
     "static/js/2.bb9484ec.chunk.js": "/species-lister/static/js/2.bb9484ec.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.6bd29ab9.chunk.js": "/species-lister/static/js/3.6bd29ab9.chunk.js",
     "static/js/3.6bd29ab9.chunk.js.map": "/species-lister/static/js/3.6bd29ab9.chunk.js.map",
     "index.html": "/species-lister/index.html",
-    "static/css/main.9d36d1b7.chunk.css.map": "/species-lister/static/css/main.9d36d1b7.chunk.css.map",
+    "static/css/main.16b7b250.chunk.css.map": "/species-lister/static/css/main.16b7b250.chunk.css.map",
     "static/js/2.bb9484ec.chunk.js.LICENSE.txt": "/species-lister/static/js/2.bb9484ec.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.066d2bd7.js",
     "static/js/2.bb9484ec.chunk.js",
-    "static/css/main.9d36d1b7.chunk.css",
-    "static/js/main.ae3b7b05.chunk.js"
+    "static/css/main.16b7b250.chunk.css",
+    "static/js/main.ec9a43b7.chunk.js"
   ]
 }
