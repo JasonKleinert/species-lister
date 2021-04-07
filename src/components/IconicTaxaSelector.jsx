@@ -3,11 +3,11 @@ import { Select } from 'antd';
 const { Option } = Select;
 
 export function IconicTaxaSelector(props) {
-    
   return (
-    <div className='iconic-taxa-selector'>
+    <div className="iconic-taxa-selector">
       <Select
-        placeholder="Select an iconic taxa"
+        placeholder="Select iconic taxa"
+        value={props.iconicTaxa}
         allowClear={true}
         style={{ width: 200 }}
         onChange={props.handleIconicTaxaChange}
@@ -25,15 +25,6 @@ export function IconicTaxaSelector(props) {
         <Option value="Plantae">Plantae</Option>
         <Option value="Protozoa">Protozoa</Option>
       </Select>
-      {/* <Select defaultValue="lucy" style={{ width: 120 }} disabled>
-        <Option value="lucy">Lucy</Option>
-      </Select>
-      <Select defaultValue="lucy" style={{ width: 120 }} loading>
-        <Option value="lucy">Lucy</Option>
-      </Select>
-      <Select defaultValue="lucy" style={{ width: 120 }} allowClear>
-        <Option value="lucy">Lucy</Option>
-      </Select> */}
     </div>
   )
 }

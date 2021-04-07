@@ -2,8 +2,11 @@ import { List, Divider } from 'antd';
 
 export function SpeciesList(props) {
   return (
-    <div className='species-list'>
-      <Divider orientation="left">{props.iconicTaxa}</Divider>
+    <div className="species-list">
+      <Divider
+        orientation="left">
+        {`${props.speciesList.length} ${props.iconicTaxa} Species`}
+      </Divider>
       <List
         // header={<div>{props.iconicTaxa}</div>}
         // bordered
