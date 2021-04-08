@@ -9,7 +9,7 @@ export function LocationControls(props) {
         placeholder="Select location"
         value={props.locationName}
         allowClear={true}
-        // style={{ width: 200 }}
+        style={{ width: 200 }}
         onChange={props.handleSelectLocation}
       >
         <Option value="34.4377, -101.0599">Caprock Canyons</Option>

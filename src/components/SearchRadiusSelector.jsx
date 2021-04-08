@@ -12,11 +12,11 @@ export function SearchRadiusSelector(props) {
         style={{ width: 200 }}
         onChange={props.handleSelectSearchRadius}
       >
-        <Option value={5}>5</Option>
-        <Option value={10}>10</Option>
-        <Option value={25}>25</Option>
-        <Option value={50}>50</Option>
-        <Option value={100}>100</Option>
+        <Option value={5}>5 km</Option>
+        <Option value={10}>10 km</Option>
+        <Option value={25}>25 km</Option>
+        <Option value={50}>50 km</Option>
+        <Option value={100}>100 km</Option>
       </Select>
     </div>
   )

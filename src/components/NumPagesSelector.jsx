@@ -6,7 +6,7 @@ export function NumPagesSelector(props) {
   return (
     <div className="numpages-selector">
       <Select
-        placeholder="Select pages"
+        placeholder="Select pages to search"
         value={props.numPages}
         allowClear={true}
         style={{ width: 200 }}
