@@ -7,7 +7,7 @@ export function LocationControls(props) {
     <div className="location-controls">
       <Select
         placeholder="Select location"
-        value={props.location}
+        value={props.locationName}
         allowClear={true}
         // style={{ width: 200 }}
         onChange={props.handleSelectLocation}

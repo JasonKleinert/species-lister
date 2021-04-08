@@ -11,6 +11,7 @@ import { recursiveObservationFetcher } from '../utilities/fetchObservations';
 export function ListerContent() {
   const [iconicTaxa, setIconicTaxa] = useState();
   const [location, setLocation] = useState();
+  const [locationName, setLocationName] = useState();
   const [radius, setRadius] = useState();
   const [numPages, setNumPages] = useState();
   const [data, setData] = useState([]);
@@ -37,11 +38,13 @@ export function ListerContent() {
 
   const handleSelectLocation = (value) => {
     setLocation(value);
+    setLocationName(value);
   }
 
   const success = (pos) => {
     let crd = pos.coords;
     setLocation(`${crd.latitude}, ${crd.longitude}`);
+    setLocationName("My current location");
 
     console.log('Your current position is:');
     console.log(`Latitude : ${crd.latitude}`);
@@ -112,6 +115,7 @@ export function ListerContent() {
         handleIconicTaxaChange={handleIconicTaxaChange} />
       <LocationControls
         location={location}
+        locationName={locationName}
         handleLocationButtonClick={handleLocationButtonClick}
         handleSelectLocation={handleSelectLocation}
       />
