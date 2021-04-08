@@ -20,8 +20,6 @@ export const recursiveObservationFetcher = async (
 
     let observations = await response.json();
     results.push(observations.results);
-
-    console.log(observations.results[observations.results.length - 1]['created_at']);
     
     if (pageNum === numPages) {
         return results;

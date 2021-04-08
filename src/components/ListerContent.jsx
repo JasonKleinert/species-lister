@@ -90,6 +90,7 @@ export function ListerContent() {
       radius,
       []
     ).then(data => {
+      console.log(data);
       let speciesList = createSpeciesList(data);
       setData(speciesList);
       setLoading(false);
