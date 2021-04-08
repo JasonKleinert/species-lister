@@ -104,6 +104,7 @@ export function ListerContent() {
     setData([]);
     setIconicTaxa(null);
     setLocation(null);
+    setLocationName(null);
     setRadius(null);
     setNumPages(null);
   }
